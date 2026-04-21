@@ -3,10 +3,9 @@
 
 let userData = null;
 
-fetch('../data.json')
+fetch('/data.json')
     .then(response => response.json())
     .then(data => {
-        // Store the ORIGINAL user array, not mapped parts
         userData = data.users;
         console.log('Data loaded:', userData);
     })
@@ -16,8 +15,9 @@ const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const submitButton = document.getElementById('btn-submit');
 
+
+
 submitButton.addEventListener('click', () => {
-    // Guard clause: Don't run if data isn't loaded yet
     if (!userData) {
         alert('Data still loading. Please wait.');
         return;
@@ -38,7 +38,3 @@ submitButton.addEventListener('click', () => {
     }
 });
 
-
-let yo = "wassup boy"
-
-console.log(yo.trim())
